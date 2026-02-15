@@ -5,103 +5,113 @@ import Wrapper from "./Wrapper.astro"
 const organisers = [
     {
         name: "Code Network",
-        icon: "tabler:code",
+        logo: "cn.png",
         colors: {
             bg: "bg-green-500",
             border: "border-b-green-500",
             hover: "hover:bg-green-500"
         },
-        link: "https://www.instagram.com/codenetwork_/"
+        instagram: "https://www.instagram.com/codenetwork_/",
+        linkedin: "https://www.linkedin.com/company/codenetwork/"
     },
     {
         name: "Women In Tech",
-        icon: "tabler:device-laptop",
+        logo: "wit.png",
         colors: {
             bg: "bg-red-500",
             border: "border-b-red-500",
             hover: "hover:bg-red-500"
         },
-        link: "https://www.instagram.com/womenintech_qut/"
+        instagram: "https://www.instagram.com/womenintech_qut/",
+        linkedin: "https://www.linkedin.com/company/women-in-technology-at-qut/"
     },
     {
         name: "QUT Aerospace Society",
-        icon: "tabler:rocket",
+        logo: "aero.png",
         colors: {
             bg: "bg-orange-500",
             border: "border-b-orange-500",
             hover: "hover:bg-orange-500"
         },
-        link: "https://www.instagram.com/qut_aerospace_society/"
+        instagram: "https://www.instagram.com/qut_aerospace_society/",
+        linkedin: "https://www.linkedin.com/company/qut-aerospace-society/"
     },
     {
         name: "QUT Electrical Engineering Student Society",
-        icon: "tabler:bolt",
+        logo: "eess.png",
         colors: {
             bg: "bg-yellow-500",
             border: "border-b-yellow-500",
             hover: "hover:bg-yellow-500"
         },
-        link: "https://www.instagram.com/qut_eess/"
+        instagram: "https://www.instagram.com/qut_eess/",
+        linkedin: "https://www.linkedin.com/company/quteess/"
     },
     {
         name: "QUT AI & ML Society",
-        icon: "tabler:brain",
+        logo: "aiml.png",
         colors: {
             bg: "bg-pink-500",
             border: "border-b-pink-500",
             hover: "hover:bg-pink-500"
         },
-        link: "https://www.instagram.com/qut_aiml/"
+        instagram: "https://www.instagram.com/qut_aiml/",
+        linkedin: "https://www.linkedin.com/company/qut-aiml/"
     },
     {
-        name: "Cyber Security Club",
-        icon: "tabler:lock-open",
+        name: "QUT Cyber Security Club",
+        logo: "csc.png",
         colors: {
-            bg: "bg-blue-500",
-            border: "border-b-blue-500",
-            hover: "hover:bg-blue-500"
+            bg: "bg-purple-500",
+            border: "border-b-purple-500",
+            hover: "hover:bg-purple-500"
         },
-        link: "https://www.instagram.com/qut_cybersec/"
+        instagram: "https://www.instagram.com/qut_cybersec/",
+        linkedin: "https://www.linkedin.com/company/qut-white-hats/"
     },
     {
-        name: "Game Dev Club",
-        icon: "tabler:device-gamepad",
+        name: "QUT Game Development Club",
+        logo: "gdc.png",
         colors: {
-            bg: "bg-indigo-500",
-            border: "border-b-indigo-500",
-            hover: "hover:bg-indigo-500"
+            bg: "bg-lime-700",
+            border: "border-b-lime-700",
+            hover: "hover:bg-lime-700"
         },
-        link: "https://www.instagram.com/gdcqut/"
+        instagram: "https://www.instagram.com/gdcqut/",
+        linkedin: "https://www.linkedin.com/company/qut-game-development-club/"
     },
     {
         name: "QUT Reality Labs",
-        icon: "tabler:stereo-glasses",
+        logo: "rl.png",
         colors: {
             bg: "bg-indigo-500",
             border: "border-b-indigo-500",
             hover: "hover:bg-indigo-500"
         },
-        link: "https://www.instagram.com/qutrealitylabs_/"
+        instagram: "https://www.instagram.com/qutrealitylabs_/",
+        linkedin: "https://www.linkedin.com/company/qut-reality-labs/"
     },
     {
         name: "QUT Law, Innovation & Technology Society",
-        icon: "tabler:gavel",
+        logo: "lits.png",
         colors: {
             bg: "bg-indigo-500",
             border: "border-b-indigo-500",
             hover: "hover:bg-indigo-500"
         },
-        link: "https://www.instagram.com/qutlitsociety/"
+        instagram: "https://www.instagram.com/qutlitsociety/",
+        linkedin: "https://www.linkedin.com/company/law-innovation-and-technology-society/"
     },
     {
         name: "Business Analytics and Data Science Club",
-        icon: "tabler:graph",
+        logo: "bands.png",
         colors: {
             bg: "bg-black",
             border: "border-b-black",
             hover: "hover:bg-black"
         },
-        link: "https://www.instagram.com/qutbands/"
+        instagram: "https://www.instagram.com/qutbands/",
+        linkedin: "https://www.linkedin.com/company/qutbands/"
     }
 ]
 ---
@@ -122,18 +132,23 @@ const organisers = [
                 const isLastAlone = arr.length % 3 === 1 && idx === arr.length - 1
                 return (
                     <div class={ `${ isLastAlone ? "sm:col-start-2" : "" } w-full max-w-sm p-8 rounded-4xl flex flex-col items-center text-center group transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl border-b-4 ${ org.colors.border } bg-white` }>
-                        <div class={ `w-16 h-16 rounded-2xl flex items-center justify-center text-white ${ org.colors.bg } text-xl font-black mb-6 transition-transform group-hover:scale-110 group-hover:rotate-3 shadow-lg` }>
-                            <Icon name={ org.icon } />
-                        </div>
+                        <img src={ `/logos/${ org.logo }` } alt={`${ org.name } logo`} class="h-20 object-contain" />
 
-                        <h3 class="font-extrabold text-lg mb-4 leading-tight">
+                        <h3 class="font-extrabold text-lg my-4 leading-tight">
                             { org.name }
                         </h3>
 
                         <div class="flex gap-3 mt-auto">
-                            <a href={ org.link } class={ `w-8 h-8 rounded-full flex items-center justify-center bg-neutral-100 hover:text-white ${ org.colors.hover } transition-all hover:scale-110` }>
+                            <a href={ org.linkedin } class={ `size-10 rounded-full flex items-center justify-center bg-neutral-100 hover:text-white ${ org.colors.hover } transition-all hover:scale-110` }>
+                                <span class="sr-only">LinkedIn</span>
+                                <span class="text-2xl font-black uppercase tracking-tighter">
+                                    <Icon name="tabler:brand-linkedin" />
+                                </span>
+                            </a>
+
+                            <a href={ org.instagram } class={ `size-10 rounded-full flex items-center justify-center bg-neutral-100 hover:text-white ${ org.colors.hover } transition-all hover:scale-110` }>
                                 <span class="sr-only">Instagram</span>
-                                <span class="text-xl font-black uppercase tracking-tighter">
+                                <span class="text-2xl font-black uppercase tracking-tighter">
                                     <Icon name="tabler:brand-instagram" />
                                 </span>
                             </a>

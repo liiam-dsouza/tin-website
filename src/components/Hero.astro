@@ -1,26 +1,48 @@
 ---
+import { Icon } from "astro-icon/components"
+
 import Button from "./Button.astro"
 import Wrapper from "./Wrapper.astro"
+import Countdown from "./Countdown.astro"
 ---
 
 <Wrapper id="hero">
-    <div>
-        <h1 class="text-[11.67vw] leading-none sm:text-8xl font-extrabold">
-            Bridge the Gap.<br>
-            <span class="highlight">Own the Future.</span>
-        </h1>
+    <div class="flex flex-col gap-y-6">
+        <h1 class="text-7xl font-bold text-center max-w-lg mx-auto">Tech Industry Night 2026</h1>
 
-        <p class="my-4 sm:text-xl sm:max-w-2xl">
-            QUT Tech Industry Night connects the brightest students with industry leaders. Experience an evening of innovation, career insights, and game-changing networking.
+        <h3 class="text-3xl mx-auto highlight">Bridge the Gap. Own the Future.</h3>
+
+        <p class="text-xl text-center max-w-2xl mx-auto">
+            The flagship networking event for students, founders, and industry leaders. Shape your future in one night.
         </p>
     </div>
 
-    <div class="flex flex-col sm:flex-row gap-4">
-        <Button link="https://events.humanitix.com/qut-tech-industry-night-2026/tickets?widget=popup" theme="pink" size="lg" variant="filled" rounding="pill">
+    <div class="flex flex-row gap-x-4 mt-4 mx-auto justify-center">
+        <p class="text-gray-500 flex flex-row gap-x-2 items-center">
+            <span class="text-purple-500 text-xl">
+                <Icon name="tabler:calendar-week" />
+            </span>
+            <span>Thursday, October 15, 2026</span>
+        </p>
+
+        <p class="text-gray-500">•</p>
+
+        <p class="text-gray-500 flex flex-row gap-x-2 items-center">
+            <span class="text-pink-500 text-xl">
+                <Icon name="tabler:map-pin" />
+            </span>
+            <span>Gardens Theatre, QUT Gardens Point</span>
+        </p>
+    </div>
+
+    <Countdown />
+
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <Button link="https://events.humanitix.com/qut-tech-industry-night-2026/tickets?widget=popup" theme="pink" size="sm" variant="filled" rounding="pill">
             Get Your Ticket
         </Button>
 
-        <Button link="mailto:industry@techindustrynight.com" theme="purple" size="lg" variant="outlined" rounding="pill">
+        <Button link="mailto:industry@techindustrynight.com" theme="purple" size="sm" variant="outlined" rounding="pill">
             Industry Partnerships
         </Button>
     </div>

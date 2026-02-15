@@ -2,37 +2,29 @@
 import Wrapper from "./Wrapper.astro"
 ---
 
-<Wrapper id="countdown">
-    <div id="hero" class="flex flex-col gap-y-4 items-center justify-center">
-        <h3 class="text-2xl">There are</h3>
-
-        <div id="timebox" class="flex flex-row gap-x-16 justify-center">
-            <div class="flex gap-x-16 font-bold text-5xl bg-linear-to-r from-pink-500 via-purple-500 to-orange-500 bg-clip-text text-transparent">
-                <div class="flex flex-col items-center">
-                    <span id="days">00</span>
-                    <p class="text-lg font-semibold text-gray-800 uppercase tracking-widest">Days</p>
-                </div>
-
-                <div class="flex flex-col items-center">
-                    <span id="hours">00</span>
-                    <p class="text-lg font-semibold text-gray-800 uppercase tracking-widest">Hours</p>
-                </div>
-
-                <div class="flex flex-col items-center">
-                    <span id="minutes">00</span>
-                    <p class="text-lg font-semibold text-gray-800 uppercase tracking-widest">Minutes</p>
-                </div>
-
-                <div class="flex flex-col items-center">
-                    <span id="seconds">00</span>
-                    <p class="text-lg font-semibold text-gray-800 uppercase tracking-widest">Seconds</p>
-                </div>
-            </div>
+<div id="timebox" class="flex flex-row gap-x-16 justify-center my-8">
+    <div class="flex gap-x-16 font-bold text-5xl bg-linear-to-r from-pink-500 via-purple-500 to-orange-500 bg-clip-text text-transparent">
+        <div class="flex flex-col items-center">
+            <span id="days">00</span>
+            <p class="text-lg font-semibold text-gray-800 uppercase tracking-widest">Days</p>
         </div>
 
-        <h3 class="text-2xl">Until Tech Industry Night 2026</h3>
+        <div class="flex flex-col items-center">
+            <span id="hours">00</span>
+            <p class="text-lg font-semibold text-gray-800 uppercase tracking-widest">Hours</p>
+        </div>
+
+        <div class="flex flex-col items-center">
+            <span id="minutes">00</span>
+            <p class="text-lg font-semibold text-gray-800 uppercase tracking-widest">Minutes</p>
+        </div>
+
+        <div class="flex flex-col items-center">
+            <span id="seconds">00</span>
+            <p class="text-lg font-semibold text-gray-800 uppercase tracking-widest">Seconds</p>
+        </div>
     </div>
-</Wrapper>
+</div>
 
 <script>
     const Days = document.getElementById("days")
