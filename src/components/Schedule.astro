@@ -1,5 +1,6 @@
 ---
 import Wrapper from "./Wrapper.astro"
+import SectionTitle from "./SectionTitle.astro"
 
 const SCHEDULE = [
     { time: '4:00 PM', title: 'Doors Open', desc: 'Check-in and early networking with student clubs.', category: 'Social' },
@@ -10,13 +11,7 @@ const SCHEDULE = [
 ---
 
 <Wrapper id="schedule">
-    <div class="flex flex-col items-center mx-auto text-center">
-        <span class="text-orange-500 font-bold tracking-widest uppercase text-sm mb-4 block">What's Happening</span>
-        <h2 class="font-black text-5xl sm:text-6xl">Event Schedule</h2>
-        <p class="text-sm sm:text-lg max-w-2xl mx-auto my-4">
-            Plan your night to make the most of every opportunity.
-        </p>
-    </div>
+    <SectionTitle title="Event Schedule" subtitle="What's Happening" description="Plan your night to make the most of every opportunity." />
 
 	<div class="relative border-l-2 border-pink-200 ml-4 md:ml-0">
 		{

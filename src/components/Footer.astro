@@ -5,12 +5,17 @@ const socials = [
     {
         name: "Instagram",
         icon: "brand-instagram",
-        href: "https://www.instagram.com/quttechindustrynight/",
+        href: "https://www.instagram.com/techindustrynight/",
     },
     {
-        linkedin: "LinkedIn",
+        name: "LinkedIn",
         icon: "brand-linkedin",
-        href: "https://www.linkedin.com/company/qut-tech-industry-night/",
+        href: "https://www.linkedin.com/company/techindustrynight/",
+    },
+    {
+        name: "TikTok",
+        icon: "brand-tiktok",
+        href: "https://www.tiktok.com/@techindustrynight",
     }
 ]
 ---
@@ -19,17 +24,17 @@ const socials = [
     <div class="mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
         <div>
             <h4 class="font-extrabold text-2xl mb-2 uppercase">
-                QUT <span class="text-pink-500">Tech Industry</span> Night 2026
+                Tech Industry Night <span class="highlight">2026</span>
             </h4>
             <p class="text-sm">Powered by the STEM clubs of QUT.</p>
         </div>
         <div class="flex gap-8 text-sm font-semibold">
-            <a href="#" class="hover:text-pink-500 transition-colors">Contact</a>
-            <a href="#" class="hover:text-pink-500 transition-colors">Sponsorships</a>
+            <!-- <a href="#" class="hover:text-pink-500 transition-colors">Contact</a>
+            <a href="#" class="hover:text-pink-500 transition-colors">Sponsorships</a> -->
         </div>
         <div class="flex gap-4">
             {
-                socials.map(social => (
+                socials.sort((a, b) => a.name.localeCompare(b.name)).map(social => (
                     <a href={ social.href } class="text-2xl size-5 rounded-full bg-gray-100 flex items-center justify-center hover:text-pink-500 transition-all">
                         <span class="sr-only">{ social.name }</span>
                         <div class="">
@@ -42,6 +47,6 @@ const socials = [
     </div>
 
     <div class="text-center mt-12 text-xs text-gray-800/50">
-        &copy; { new Date().getFullYear() } Queensland University of Technology Tech Industry Night. All rights reserved.
+        &copy; { new Date().getFullYear() } Tech Industry Night. All rights reserved.
     </div>
 </div>

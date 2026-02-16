@@ -1,5 +1,6 @@
 ---
 import { Icon } from "astro-icon/components"
+import SectionTitle from "./SectionTitle.astro"
 import Wrapper from "./Wrapper.astro"
 
 const organisers = [
@@ -84,9 +85,9 @@ const organisers = [
         name: "QUT Reality Labs",
         logo: "rl.png",
         colors: {
-            bg: "bg-indigo-500",
-            border: "border-b-indigo-500",
-            hover: "hover:bg-indigo-500"
+            bg: "bg-violet-800",
+            border: "border-b-violet-800",
+            hover: "hover:bg-violet-800"
         },
         instagram: "https://www.instagram.com/qutrealitylabs_/",
         linkedin: "https://www.linkedin.com/company/qut-reality-labs/"
@@ -95,9 +96,9 @@ const organisers = [
         name: "QUT Law, Innovation & Technology Society",
         logo: "lits.png",
         colors: {
-            bg: "bg-indigo-500",
-            border: "border-b-indigo-500",
-            hover: "hover:bg-indigo-500"
+            bg: "bg-indigo-900",
+            border: "border-b-indigo-900",
+            hover: "hover:bg-indigo-900"
         },
         instagram: "https://www.instagram.com/qutlitsociety/",
         linkedin: "https://www.linkedin.com/company/law-innovation-and-technology-society/"
@@ -117,15 +118,9 @@ const organisers = [
 ---
 
 <Wrapper id="organisers">
-    <div class="flex flex-col items-center mx-auto text-center">
-        <span class="text-orange-500 font-bold tracking-widest uppercase text-sm mb-4 block">Powering the Event</span>
-        <h2 class="font-black text-5xl sm:text-6xl">Meet the Organisers</h2>
-        <p class="text-sm sm:text-lg max-w-2xl mx-auto my-4">
-            This event is curated for students, by students. Connect with the clubs that make it happen.
-        </p>
-    </div>
+    <SectionTitle title="Meet the Organisers" subtitle="Powering the Event" description="This event is curated for students, by students. Connect with the clubs that make it happen." />
 
-    <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+    <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto my-4">
         {
             organisers.sort((a, b) => a.name.localeCompare(b.name)).map((org, idx, arr) => {
 

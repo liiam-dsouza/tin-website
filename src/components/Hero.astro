@@ -10,14 +10,14 @@ import Countdown from "./Countdown.astro"
     <div class="flex flex-col gap-y-6">
         <h1 class="text-7xl font-bold text-center max-w-lg mx-auto">Tech Industry Night 2026</h1>
 
-        <h3 class="text-3xl mx-auto highlight">Bridge the Gap. Own the Future.</h3>
+        <h3 class="text-3xl text-center mx-auto highlight">Bridge the Gap. Own the Future.</h3>
 
         <p class="text-xl text-center max-w-2xl mx-auto">
             The flagship networking event for students, founders, and industry leaders. Shape your future in one night.
         </p>
     </div>
 
-    <div class="flex flex-row gap-x-4 mt-4 mx-auto justify-center">
+    <div class="flex flex-col md:flex-row gap-x-4 mt-4 mx-auto justify-center items-center">
         <p class="text-gray-500 flex flex-row gap-x-2 items-center">
             <span class="text-purple-500 text-xl">
                 <Icon name="tabler:calendar-week" />
@@ -25,7 +25,7 @@ import Countdown from "./Countdown.astro"
             <span>Thursday, October 15, 2026</span>
         </p>
 
-        <p class="text-gray-500">•</p>
+        <p class="text-gray-500 hidden sm:block">•</p>
 
         <p class="text-gray-500 flex flex-row gap-x-2 items-center">
             <span class="text-pink-500 text-xl">
@@ -37,8 +37,8 @@ import Countdown from "./Countdown.astro"
 
     <Countdown />
 
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <Button link="https://events.humanitix.com/qut-tech-industry-night-2026/tickets?widget=popup" theme="pink" size="sm" variant="filled" rounding="pill">
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <Button link="https://forms.gle/oSzyqxXqyy7uH64t5" theme="pink" size="sm" variant="filled" rounding="pill">
             Get Your Ticket
         </Button>
 

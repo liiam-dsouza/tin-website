@@ -2,18 +2,11 @@
 import { Icon } from "astro-icon/components"
 
 import Button from "./Button.astro"
+import SectionTitle from "./SectionTitle.astro"
 import Wrapper from "./Wrapper.astro"
 ---
-
 <Wrapper id="attending">
-    <div class="flex flex-col items-center mx-auto text-center">
-        <span class="text-orange-500 font-bold tracking-widest uppercase text-sm mb-4 block">The Value</span>
-        <h2 class="font-black text-5xl sm:text-6xl">Why Attend?</h2>
-        <p class="text-sm sm:text-lg max-w-2xl mx-auto my-4">
-            An ecosystem where academic excellence meets industry expertise.
-        </p>
-    </div>
-
+    <SectionTitle title="Why Attend?" subtitle="The Value" description="An ecosystem where academic excellence meets industry expertise." />
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-8">
         <div class="bg-white border-l-12 border-4 border-pink-500 rounded-3xl p-4 w-full hover:shadow-2xl hover:scale-[1.03] transition-all">
             <div class="text-4xl text-pink-500 bg-pink-100 w-fit p-4 m-4 md:m-8 rounded-lg">
@@ -31,7 +24,7 @@ import Wrapper from "./Wrapper.astro"
                     <li class="mt-2">Gain insights from industry leaders</li>
                 </ul>
 
-                <Button theme="pink" size="sm" variant="filled" rounding="pill">
+                <Button link="https://forms.gle/oSzyqxXqyy7uH64t5" theme="pink" size="sm" variant="filled" rounding="pill">
                     Get Your Ticket
                 </Button>
             </div>
@@ -53,7 +46,7 @@ import Wrapper from "./Wrapper.astro"
                     <li class="mt-2">Build lasting relationships with future talent</li>
                 </ul>
 
-                <Button theme="purple" size="sm" variant="filled" rounding="pill">
+                <Button link="mailto:industry@techindustrynight.com" theme="purple" size="sm" variant="filled" rounding="pill">
                     Partner With Us
                 </Button>
             </div>

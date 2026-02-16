@@ -1,5 +1,6 @@
 ---
-import Wrapper from "./Wrapper.astro";
+import Wrapper from "./Wrapper.astro"
+import SectionTitle from "./SectionTitle.astro"
 
 const PREP_CHECKLIST = [
 	{ id: "resume", label: "Resume/Portfolio QR Code", icon: "📄" },
@@ -11,14 +12,7 @@ const PREP_CHECKLIST = [
 ---
 
 <Wrapper id="checklist">
-	<div class="container mx-auto max-w-4xl">
-		<div class="flex flex-col items-center mx-auto text-center">
-            <span class="text-orange-500 font-bold tracking-widest uppercase text-sm mb-4 block">Get Prepared</span>
-            <h2 class="font-black text-5xl sm:text-6xl">Networking Survival Guide</h2>
-            <p class="text-sm sm:text-lg max-w-2xl mx-auto my-4">
-                Prepare like a pro so you can focus on the conversations.
-            </p>
-        </div>
+    <SectionTitle title="Networking Survival Guide" subtitle="Get Prepared" description="Prepare like a pro so you can focus on the conversations." />
 
 		<div class="glass p-8 md:p-12 rounded-[3rem] bg-white shadow-2xl relative overflow-hidden">
 			<div class="grid md:grid-cols-2 gap-6">

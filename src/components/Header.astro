@@ -2,36 +2,31 @@
 import Button from "./Button.astro"
 ---
 
-<nav class={`px-6 py-3 fixed w-full z-50 transition-all duration-300 bg-white shadow-md`}>
-	<div class="flex justify-between items-center">
+<nav class={`fixed w-full z-50 transition-all duration-300 bg-white shadow-md`}>
+	<div class="px-6 py-3 flex justify-between items-center">
 		<a href="#" class="flex items-center space-x-2">
 			<img src="/logo.svg" alt="QUT Tech Industry Night Logo" class="size-12" />
 			<span class="font-extrabold text-xl tracking-tighter">
-				QUT <span class="highlight">TECH INDUSTRY NIGHT</span>
+				Tech Industry Night <span class="highlight">2026</span>
 			</span>
 		</a>
 
 		<div class="hidden md:flex space-x-8">
-			<!-- {
-				NAV_ITEMS.map((item) => (
-					<a
-						key={item.label}
-						href={item.href}
-						class="text-sm font-semibold hover:text-pink-500 transition-colors duration-200"
-						style={{ color: COLORS.text }}
-					>
-						{item.label}
-					</a>
-				))
-			} -->
-            <a href="#" class="text-sm font-semibold hover:text-pink-500 transition-colors duration-200">About</a>
-            <a href="#" class="text-sm font-semibold hover:text-pink-500 transition-colors duration-200">Schedule</a>
-            <a href="#" class="text-sm font-semibold hover:text-pink-500 transition-colors duration-200">FAQ</a>
-            <a href="#" class="text-sm font-semibold hover:text-pink-500 transition-colors duration-200">Ticketing</a>
+            <a href="#schedule" class="text-sm font-semibold hover:text-pink-500 transition-colors duration-200">Schedule</a>
+            <a href="#faq" class="text-sm font-semibold hover:text-pink-500 transition-colors duration-200">FAQ</a>
+            <a href="#tickets" class="text-sm font-semibold hover:text-pink-500 transition-colors duration-200">Ticketing</a>
 		</div>
 
-		<Button link="https://events.humanitix.com/qut-tech-industry-night-2026/tickets?widget=popup" theme="pink" size="sm" variant="filled" rounding="pill">
-            Get Tickets
-        </Button>
+		<div class="hidden md:block">
+            <Button link="https://forms.gle/oSzyqxXqyy7uH64t5" theme="pink" size="sm" variant="filled" rounding="pill">
+                Get Tickets
+            </Button>
+        </div>
 	</div>
+
+    <!-- <div class="bg-red-500 text-white">
+        <p class="text-center text-sm py-1">
+            Early Bird Tickets are now available! Secure your spot for just $10.
+        </p>
+    </div> -->
 </nav>
