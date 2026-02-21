@@ -1,5 +1,12 @@
 ---
 import Button from "./Button.astro"
+
+const SCROLLING_TEXT = [
+    "Early Bird Tickets Now Available! Get yours for just $10.",
+    "Join us for an unforgettable night of networking and innovation.",
+    "Connect with industry leaders, founders, and fellow students.",
+    "Don't miss out on the tech event of the year!"
+]
 ---
 
 <nav class={`fixed w-full z-50 transition-all duration-300 bg-white shadow-md`}>
@@ -24,9 +31,14 @@ import Button from "./Button.astro"
         </div>
 	</div>
 
-    <!-- <div class="bg-red-500 text-white">
-        <p class="text-center text-sm py-1">
-            Early Bird Tickets are now available! Secure your spot for just $10.
-        </p>
+    <!-- <div class="bg-red-500 text-white whitespace-nowrap animate-marquee py-2">
+        {
+            [...SCROLLING_TEXT, ...SCROLLING_TEXT].map(text => (
+                <p class="text-center text-sm border-x border-white px-6">
+                    { text }
+                </p>
+            ))
+        }
+
     </div> -->
 </nav>

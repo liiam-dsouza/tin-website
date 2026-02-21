@@ -23,3 +23,13 @@ h1, h2, h3, h4, h5, h6 {
 .highlight {
     @apply inline-block pr-1 text-transparent bg-clip-text bg-linear-to-r from-pink-500 via-purple-500 to-orange-500;
 }
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+    display: inline-flex;
+    animation: marquee 30s linear infinite;
+}
