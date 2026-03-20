@@ -2,51 +2,80 @@
 import { Icon } from "astro-icon/components"
 
 const socials = [
-    {
-        name: "Instagram",
-        icon: "brand-instagram",
-        href: "https://www.instagram.com/techindustrynight/",
-    },
-    {
-        name: "LinkedIn",
-        icon: "brand-linkedin",
-        href: "https://www.linkedin.com/company/techindustrynight/",
-    },
-    {
-        name: "TikTok",
-        icon: "brand-tiktok",
-        href: "https://www.tiktok.com/@techindustrynight",
-    }
+    { name: "Instagram", icon: "brand-instagram", href: "https://www.instagram.com/techindustrynight/" },
+    { name: "LinkedIn", icon: "brand-linkedin", href: "https://www.linkedin.com/company/techindustrynight/" },
+    { name: "TikTok", icon: "brand-tiktok", href: "https://www.tiktok.com/@techindustrynight" }
+]
+
+const legal = [
+    { name: "Privacy Policy", href: "/privacy" },
+    { name: "Terms of Service", href: "/terms" }
 ]
 ---
-
 <div class="w-full p-12 border-t border-gray-200">
-    <div class="mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+
+    <div class="mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+
+        <!-- Brand -->
         <div>
             <h4 class="font-extrabold text-2xl mb-2 uppercase">
                 Tech Industry Night <span class="highlight">2026</span>
             </h4>
-            <p class="text-sm">Powered by the STEM clubs of QUT.</p>
+            <p class="text-sm text-gray-600">
+                Powered by the STEM clubs of QUT.
+            </p>
         </div>
-        <div class="flex gap-8 text-sm font-semibold">
-            <!-- <a href="#" class="hover:text-pink-500 transition-colors">Contact</a>
-            <a href="#" class="hover:text-pink-500 transition-colors">Sponsorships</a> -->
+
+        <!-- Event -->
+        <div>
+            <h5 class="text-xs uppercase text-gray-500 font-bold my-2">
+                Event
+            </h5>
+
+            <div class="flex flex-col gap-2 text-sm font-semibold">
+                <a href="mailto:team@techindustrynight.com" class="hover:text-pink-500 transition-colors">
+                    team@techindustrynight.com
+                </a>
+            </div>
         </div>
-        <div class="flex gap-4">
+
+        <!-- Social -->
+        <div>
+            <h5 class="text-xs uppercase text-gray-500 font-bold my-2">
+                Connect
+            </h5>
+
+            <div class="flex gap-4">
+                {
+                    socials.map(social => (
+                        <a href={social.href} class="text-2xl rounded-full bg-gray-100 flex items-center justify-center hover:text-pink-500 transition-all">
+                            <span class="sr-only">{social.name}</span>
+                            <Icon name={`tabler:${social.icon}`} />
+                        </a>
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<div class="w-full px-12 py-6 border-t border-gray-200">
+
+    <div class="mx-auto flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 gap-4">
+
+        <div>
+            &copy; { new Date().getFullYear() } Tech Industry Night. All rights reserved.
+        </div>
+
+        <div class="flex gap-6">
             {
-                socials.sort((a, b) => a.name.localeCompare(b.name)).map(social => (
-                    <a href={ social.href } class="text-2xl size-5 rounded-full bg-gray-100 flex items-center justify-center hover:text-pink-500 transition-all">
-                        <span class="sr-only">{ social.name }</span>
-                        <div class="">
-                            <Icon name={`tabler:${ social.icon }`} />
-                        </div>
+                legal.map(link => (
+                    <a href={link.href} class="hover:text-pink-500 transition-colors">
+                        {link.name}
                     </a>
                 ))
             }
         </div>
+
     </div>
 
-    <div class="text-center mt-12 text-xs text-gray-800/50">
-        &copy; { new Date().getFullYear() } Tech Industry Night. All rights reserved.
-    </div>
 </div>
