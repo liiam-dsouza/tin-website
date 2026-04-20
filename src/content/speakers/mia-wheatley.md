@@ -1,7 +1,7 @@
 ---
 first: "Mia"
 last: "Wheatley"
-role: "Junior Security Architect"
+role: "Junior Information Security Architect"
 company: "Queensland University of Technology"
 photo: "Mia-Wheatley.jpg"
 linkedin: "https://www.linkedin.com/in/mia-w-61b75b247/"
