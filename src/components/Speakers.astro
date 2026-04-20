@@ -31,7 +31,7 @@ const speakers = await Promise.all(
         speakers.map((speaker) => {
             const { first, last, role, company, photo, linkedin } = speaker.frontmatter
             return (
-                <div class="flex flex-col sm:flex-row gap-8 justify-center items-center my-8">
+                <div class="flex flex-col md:flex-row gap-8 justify-center items-center my-8">
                     <img src={`/speakers/${photo}`} alt={`${first}'s photo`} class="size-56 rounded-full object-cover" />
                     <div class="">
                         <h3 class="text-2xl font-semibold">{first} {last}</h3>
