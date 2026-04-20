@@ -1,0 +1,53 @@
+---
+import { Icon } from "astro-icon/components"
+import SectionTitle from "./SectionTitle.astro"
+import Wrapper from "./Wrapper.astro"
+
+type SpeakerModule = {
+  frontmatter: {
+    first: string
+    last: string
+    role: string
+    company: string
+    photo: string
+    linkedin: string
+  }
+  Content: any
+}
+
+const modules = import.meta.glob<SpeakerModule>(
+  '../content/speakers/*.md'
+)
+
+const speakers = await Promise.all(
+  Object.values(modules).map((load) => load())
+)
+---
+
+<Wrapper id="speakers">
+    <SectionTitle title="Event Speakers" subtitle="Industry Leaders" description="Learn from the industry leaders speaking at this year's event." />
+
+    {
+        speakers.map((speaker) => {
+            const { first, last, role, company, photo, linkedin } = speaker.frontmatter
+            return (
+                <div class="flex flex-col sm:flex-row gap-8 justify-center items-center my-8">
+                    <img src={`/speakers/${photo}`} alt={`${first}'s photo`} class="size-56 rounded-full object-cover" />
+                    <div class="">
+                        <h3 class="text-2xl font-semibold">{first} {last}</h3>
+                        <p class="text-lg text-gray-600">{role} <span class="text-pink-500">@</span> {company}</p>
+
+                        <div class="mt-2 prose max-w-none">
+                            <speaker.Content />
+                        </div>
+
+                        <a href={linkedin} class="inline-flex items-center gap-2 mt-4 text-pink-500 hover:underline">
+                            <Icon name="tabler:brand-linkedin" />
+                            Connect with {first} on LinkedIn
+                        </a>
+                    </div>
+                </div>
+            )
+        })
+    }
+</Wrapper>
