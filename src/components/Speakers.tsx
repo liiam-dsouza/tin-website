@@ -16,7 +16,7 @@ function Speakers() {
         variants={fadeUpContainer}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.05 }}
         className="max-w-6xl mx-auto flex flex-col gap-16"
       >
         {/* Heading */}
