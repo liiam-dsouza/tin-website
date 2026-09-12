@@ -40,6 +40,7 @@ export function Footer({ theme }: FooterProps) {
               <a href="/#speakers" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Speakers</a>
               <a href="/#tickets" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Tickets</a>
               <Link to="/gallery" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Gallery</Link>
+              <Link to="/events" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Past Events</Link>
               {/* <Link to="/sponsors" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Sponsors</Link> */}
               {/* <Link to="/team" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Our Team</Link> */}
             </div>

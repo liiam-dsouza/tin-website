@@ -9,6 +9,7 @@ import NetworkingGuide from "@/components/NetworkingGuide"
 import Testimonials from "@/components/Testimonials"
 import FAQ from "@/components/FAQ"
 import Tickets from "@/components/Tickets"
+import { event } from "@/data/event"
 
 function Home() {
 	console.log("Hello fellow developer! 👋 If you're seeing this, it means you're curious about how our website works. Feel free to take a look around!")
@@ -17,14 +18,14 @@ function Home() {
 			<SEO url="/" />
 			<Hero />
 			{/* <Stats /> */}
-			<ValueProps />
-			<Schedule />
+			{/* <ValueProps /> */}
+			{!event.postEvent && <Schedule />}
 			<Speakers />
 			<Organisers />
-			<NetworkingGuide />
+			{/* <NetworkingGuide /> */}
 			<Testimonials />
-			<FAQ />
-			<Tickets />
+			{/* <FAQ /> */}
+			{/* <Tickets /> */}
 		</>
 	)
 }

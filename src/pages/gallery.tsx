@@ -7,6 +7,7 @@ import { fadeUpContainer, fadeUpItem } from "@/lib/animations"
 import { gallery } from "@/data/gallery"
 import { organisers } from "@/data/organisers"
 import { event } from "@/data/event"
+import { pastEvents } from "@/data/pastEvents"
 
 interface LightboxProps {
   photos: { src: string; thumb: string; alt: string; caption?: string }[]
@@ -192,26 +193,24 @@ function ClubStrip({ clubIds }: { clubIds: string[] }) {
   )
 }
 
-const yearBlurbs: Record<number, { title: string; description: string; stats?: string }> = {
-  2025: {
-    title: "The Big Leap",
-    description: "Tech Industry Night moved to Gardens Theatre and welcomed over 300 students and industry professionals for our biggest event yet. A night of keynotes, panels, and connections that set the benchmark for years to come.",
-    stats: "300+ attendees · Gardens Theatre · 10 clubs",
-  },
-  2024: {
-    title: "Building Momentum",
-    description: "Another year of bringing students and industry together. TIN continued to grow its reputation as one of QUT's premier networking events, laying the groundwork for the record-breaking year that followed.",
-  },
-  2023: {
-    title: "Early Days",
-    description: "One of TIN's earlier events, bringing together students and industry in an intimate setting. The connections made here laid the groundwork for the rapid growth that followed in the years ahead.",
-  },
-}
+const yearBlurbs: Record<number, { title: string; description: string; stats?: string }> =
+  Object.fromEntries(
+    pastEvents.map((pe) => [
+      pe.year,
+      {
+        title: pe.tagline,
+        description: pe.galleryBlurb ?? pe.highlights.join(" "),
+        stats: `${pe.attendees}+ attendees · ${pe.venue} · ${pe.clubs} clubs`,
+      },
+    ])
+  )
 
 export default function Gallery() {
   const [lightbox, setLightbox] = useState<{ yearIndex: number; photoIndex: number } | null>(null)
 
-  const sortedGallery = [...gallery].sort((a, b) => b.year - a.year)
+  const sortedGallery = [...gallery]
+    .filter((y) => event.hasPhotos || y.year !== event.year)
+    .sort((a, b) => b.year - a.year)
 
   const currentLightboxPhotos = lightbox !== null
     ? sortedGallery[lightbox.yearIndex].photos
@@ -239,36 +238,39 @@ export default function Gallery() {
           </p>
         </motion.div>
 
-        {/* 2026 coming soon */}
-        <motion.div variants={fadeUpItem} className="flex flex-col gap-6">
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-3">
-              <h2 className="font-heading font-bold text-2xl">{event.year}</h2>
-              <Badge className="bg-brand-gradient text-white border-0">
-                Upcoming
-              </Badge>
+        {/* Current year — coming soon or photos */}
+        {!event.hasPhotos && (
+          <motion.div variants={fadeUpItem} className="flex flex-col gap-6">
+            <div className="flex items-center gap-4">
+              <div className="flex items-center gap-3">
+                <h2 className="font-heading font-bold text-2xl">{event.year}</h2>
+                <Badge className="bg-brand-gradient text-white border-0">
+                  {event.postEvent ? "Coming Soon" : "Upcoming"}
+                </Badge>
+              </div>
+              <div className="flex-1 h-px bg-border" />
             </div>
-            <div className="flex-1 h-px bg-border" />
-          </div>
 
-          <div className="flex flex-col items-center justify-center py-20 gap-4 rounded-2xl border border-dashed border-border bg-muted/20 text-center">
-            <div className="h-16 w-16 rounded-full bg-muted flex items-center justify-center">
-              <Images className="size-8 text-muted-foreground" />
+            <div className="flex flex-col items-center justify-center py-20 gap-4 rounded-2xl border border-dashed border-border bg-muted/20 text-center">
+              <div className="h-16 w-16 rounded-full bg-muted flex items-center justify-center">
+                <Images className="size-8 text-muted-foreground" />
+              </div>
+              <div className="flex flex-col gap-1">
+                <p className="font-heading font-bold text-lg">Photos Coming Soon</p>
+                <p className="text-sm text-muted-foreground max-w-sm">
+                  Photos from Tech Industry Night {event.year} will appear here after the event.
+                </p>
+              </div>
+              {!event.postEvent && (
+                <Button className="bg-brand-gradient text-white border-0 mt-2">
+                  <a href={event.ticketingUrl} target="_blank" rel="noreferrer">
+                    Get Your Ticket
+                  </a>
+                </Button>
+              )}
             </div>
-            <div className="flex flex-col gap-1">
-              <p className="font-heading font-bold text-lg">Photos Coming Soon</p>
-              <p className="text-sm text-muted-foreground max-w-sm">
-                Photos from Tech Industry Night {event.year} will appear here
-                after the event. Check back after August 14.
-              </p>
-            </div>
-            <Button className="bg-brand-gradient text-white border-0 mt-2">
-              <a href={event.ticketingUrl} target="_blank" rel="noreferrer">
-                Get Your Ticket
-              </a>
-            </Button>
-          </div>
-        </motion.div>
+          </motion.div>
+        )}
 
         {/* Past years */}
         {sortedGallery.map((yearData, yearIndex) => {

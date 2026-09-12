@@ -5,8 +5,11 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import { speakers } from "@/data/speakers"
 import { fadeUpContainer, fadeUpItem } from "@/lib/animations"
+import { event } from "@/data/event"
 
 function Speakers() {
+  const isPostEvent = event.postEvent
+
   return (
     <section id="speakers" className="py-24 px-6 bg-muted/30">
       <motion.div
@@ -19,13 +22,15 @@ function Speakers() {
         {/* Heading */}
         <motion.div variants={fadeUpItem} className="text-center flex flex-col gap-3">
           <p className="text-sm uppercase tracking-widest text-muted-foreground">
-            Industry Leaders
+            {isPostEvent ? `TIN ${event.year}` : "Industry Leaders"}
           </p>
           <h2 className="font-heading font-bold text-3xl md:text-4xl">
-            Event Speakers
+            {isPostEvent ? "This Year's Speakers" : "Event Speakers"}
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Learn from the industry leaders speaking at this year's event.
+            {isPostEvent
+              ? `The industry leaders who took the stage at Tech Industry Night ${event.year}.`
+              : "Learn from the industry leaders speaking at this year's event."}
           </p>
         </motion.div>
 

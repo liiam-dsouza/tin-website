@@ -15,6 +15,8 @@ import ElevatorPitch from "./pages/elevatorPitch"
 import Gallery from "./pages/gallery"
 import About from "./pages/about"
 import SocialCard from "./pages/socialCard"
+import PastEvents from "./pages/PastEvents"
+import PastEvent from "./pages/PastEvent"
 
 
 function App() {
@@ -25,8 +27,6 @@ function App() {
 					<Route element={<MainLayout />}>
 						<Route index element={<Home />} />
 						<Route path="/speaker/:id" element={<SpeakerProfile />} />
-						{/* <Route path="/sponsors" element={<Sponsors />} />
-						<Route path="/team" element={<Team />} /> */}
 						<Route path="/about" element={<About />} />
 						<Route path="/gallery" element={<Gallery />} />
 						<Route path="/qr-generator" element={<QRGenerator />} />
@@ -35,6 +35,8 @@ function App() {
 						<Route path="/tickets" element={<Tickets />} />
 						<Route path="/terms" element={<Terms />} />
 						<Route path="/privacy" element={<Privacy />} />
+						<Route path="/events" element={<PastEvents />} />
+						<Route path="/events/:year" element={<PastEvent />} />
 					</Route>
 				</Routes>
 			</HelmetProvider>

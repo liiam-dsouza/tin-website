@@ -19,7 +19,7 @@ export function MainLayout() {
         onToggleTheme={toggle}
         onOpenPalette={() => setPaletteOpen(true)}
       />
-      <CommandPalette open={paletteOpen} onOpenChange={setPaletteOpen} />
+      {/* <CommandPalette open={paletteOpen} onOpenChange={setPaletteOpen} /> */}
       <main>
         <Outlet />
       </main>

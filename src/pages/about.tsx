@@ -6,45 +6,55 @@ import { Button } from "@/components/ui/button"
 import { event } from "@/data/event"
 
 const stats = [
-  { value: "300+", label: "Students Attended" },
-  { value: "30+",  label: "Industry Reps" },
-  { value: "12",   label: "Organising Clubs" },
-  { value: "5th",  label: "Year Running" },
+	{ value: "200+", label: "Students Attended" },
+	{ value: "30+",  label: "Industry Reps" },
+	{ value: "12",   label: "Organising Clubs" },
+	{ value: "5th",  label: "Year Running" },
 ]
 
 const disciplines = [
-  "Software Development",
-  "Cybersecurity",
-  "Data & AI",
-  "Cloud & Infrastructure",
-  "Product & UX",
-  "Emerging Technologies",
-  "Digital Innovation",
-  "Consulting",
+	"Software Development",
+	"Cybersecurity",
+	"Data & AI",
+	"Cloud & Infrastructure",
+	"Product & UX",
+	"Emerging Technologies",
+	"Digital Innovation",
+	"Consulting",
+	"Engineering",
 ]
 
 const timeline = [
-  {
-    year: "2023",
-    title: "Finding Its Feet",
-    description: "TIN established itself as a genuine fixture in Brisbane's student tech calendar. More clubs came on board, more companies attended, and the format — theatre-based, discussion-led, deliberately not a career fair — started to define what made the event different.",
-  },
-  {
-    year: "2024",
-    title: "Building Momentum",
-    description: "Another year of growth. More students, more industry representatives, and a stronger reputation across QUT's STEM community. The foundations were being laid for something much larger.",
-  },
-  {
-    year: "2025",
-    title: "The Big Leap",
-    description: "Tech Industry Night moved to the Gardens Theatre at QUT's Gardens Point campus and welcomed over 300 attendees — its biggest year yet. 12 student clubs, 30+ industry reps, and 5,000+ LinkedIn impressions. The event had arrived.",
-  },
-  {
-    year: "2026",
-    title: "What's Next",
-    description: "TIN is back at Gardens Theatre on August 14. The same intentional format, bigger stage, and an even stronger lineup of speakers, companies, and students.",
-    isCurrent: true,
-  },
+	{
+		year: "2023",
+		title: "Finding Its Feet",
+		description: "TIN established itself as a genuine fixture in Brisbane's student tech calendar. More clubs came on board, more companies attended, and the format — theatre-based, discussion-led, deliberately not a career fair — started to define what made the event different.",
+		isCurrent: false,
+	},
+	{
+		year: "2024",
+		title: "Building Momentum",
+		description: "Another year of growth. More students, more industry representatives, and a stronger reputation across QUT's STEM community. The foundations were being laid for something much larger.",
+		isCurrent: false,
+	},
+	{
+		year: "2025",
+		title: "The Big Leap",
+		description: "Tech Industry Night moved to the Gardens Theatre at QUT's Gardens Point campus and welcomed over 200 attendees — its biggest year yet. 12 student clubs, 30+ industry reps, and 5,000+ LinkedIn impressions. The event had arrived.",
+		isCurrent: false,
+	},
+	{
+		year: "2026",
+		title: "Raising the Bar",
+		description: "Tech Industry Night returned to Gardens Theatre for its fifth year, bringing together students, industry professionals, and the clubs that make it all happen. Another night of keynotes, real conversations, and connections that last well beyond the room.",
+		isCurrent: false,
+	},
+	{
+		year: "2027",
+		title: "What's Next?",
+		description: "The future of Tech Industry Night is bright. With a strong foundation, a growing community, and a clear vision, the event is poised to continue its trajectory of growth and impact in the years to come.",
+		isCurrent: true,
+	},
 ]
 
 export default function About() {

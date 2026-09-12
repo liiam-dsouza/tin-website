@@ -27,6 +27,7 @@ import {
 import { IconBrandLinkedin, IconBrandInstagram } from "@tabler/icons-react"
 import { speakers } from "@/data/speakers"
 import { event } from "@/data/event"
+import { pastEvents } from "@/data/pastEvents"
 
 interface CommandPaletteProps {
   open: boolean
@@ -115,6 +116,23 @@ export function CommandPalette({ open, onOpenChange }: CommandPaletteProps) {
             <Image className="size-4 mr-2 text-muted-foreground" />
             <span>Gallery</span>
           </CommandItem>
+          <CommandItem
+            onSelect={() => go("/events")}
+            keywords={["past", "events", "archive", "history", "previous"]}
+          >
+            <Building2 className="size-4 mr-2 text-muted-foreground" />
+            <span>Past Events</span>
+          </CommandItem>
+          {pastEvents.map((pe) => (
+            <CommandItem
+              key={pe.year}
+              onSelect={() => go(`/events/${pe.year}`)}
+              keywords={[String(pe.year), "recap", "past", "events"]}
+            >
+              <Building2 className="size-4 mr-2 text-muted-foreground" />
+              <span>TIN {pe.year} Recap</span>
+            </CommandItem>
+          ))}
           {/* <CommandItem
             onSelect={() => go("/sponsors")}
             keywords={["sponsors", "partners", "companies"]}

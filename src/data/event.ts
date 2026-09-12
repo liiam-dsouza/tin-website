@@ -3,6 +3,9 @@ export const event = {
     year: 2026,
     tagline: "Bridge the Gap. Own the Future.",
     date: new Date("2026-08-14T15:00:00+10:00"), // August 14, 2026, 3:00 PM AEST
+	nextYear: 2027,
+	postEvent: true,
+	hasPhotos: true,
     venue: "Gardens Theatre, QUT Gardens Point",
     email: {
         team: "team@techindustrynight.com",
