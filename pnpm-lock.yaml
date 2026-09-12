@@ -11,9 +11,6 @@ importers:
       '@base-ui/react':
         specifier: ^1.4.1
         version: 1.4.1(@types/react@19.2.14)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
-      '@dev.icons/react':
-        specifier: ^1.1.0
-        version: 1.1.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       '@fontsource-variable/geist':
         specifier: ^5.2.8
         version: 5.2.8
@@ -273,12 +270,6 @@ packages:
     peerDependenciesMeta:
       '@types/react':
         optional: true
-
-  '@dev.icons/react@1.1.0':
-    resolution: {integrity: sha512-N4JqK6zeyL7A9ChnU7pKdFm9Zj8lzGpQX7rqKM4iBbaADL3iaZygAvjgpSnYtkGYGceYosbIpecikcTgP/0pnw==}
-    peerDependencies:
-      react: '>= 16.8'
-      react-dom: '>= 16.8'
 
   '@dotenvx/dotenvx@1.65.0':
     resolution: {integrity: sha512-v4FA/Lw3pTEloLxBqTOaYDX6MNo0Jo7lGBsPZhwnJBqRJp0AzQg1ZZNxrFsh6HVC6QWeWrfIKLn0y2eyIXaVDg==}
@@ -3280,11 +3271,6 @@ snapshots:
       use-sync-external-store: 1.6.0(react@19.2.6)
     optionalDependencies:
       '@types/react': 19.2.14
-
-  '@dev.icons/react@1.1.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6)':
-    dependencies:
-      react: 19.2.6
-      react-dom: 19.2.6(react@19.2.6)
 
   '@dotenvx/dotenvx@1.65.0':
     dependencies:
