@@ -193,34 +193,40 @@ export default function About() {
           </div>
         </motion.div>
 
-        <Separator />
+        {
+			!event.postEvent && (
+				<>
+					<Separator />
 
-        {/* CTA */}
-        <motion.div
-          variants={fadeUpItem}
-          className="flex flex-col items-center text-center gap-6"
-        >
-          <h2 className="font-heading font-bold text-2xl">
-            Be part of it
-          </h2>
-          <p className="text-muted-foreground max-w-md">
-            Whether you're a student looking to kickstart your career or a
-            company wanting to connect with the next generation of tech talent —
-            there's a place for you at TIN {event.year}.
-          </p>
-          <div className="flex flex-wrap gap-3 justify-center">
-            <Button className="bg-brand-gradient text-white border-0 hover:opacity-90 transition-opacity">
-              <a href={event.ticketingUrl} target="_blank" rel="noreferrer">
-                Get Your Ticket
-              </a>
-            </Button>
-            <Button variant="outline">
-              <a href={`mailto:${event.email.industry}`}>
-                Industry Enquiries
-              </a>
-            </Button>
-          </div>
-        </motion.div>
+					{/* CTA */}
+					<motion.div
+					variants={fadeUpItem}
+					className="flex flex-col items-center text-center gap-6"
+					>
+					<h2 className="font-heading font-bold text-2xl">
+						Be part of it
+					</h2>
+					<p className="text-muted-foreground max-w-md">
+						Whether you're a student looking to kickstart your career or a
+						company wanting to connect with the next generation of tech talent —
+						there's a place for you at TIN {event.year}.
+					</p>
+					<div className="flex flex-wrap gap-3 justify-center">
+						<Button className="bg-brand-gradient text-white border-0 hover:opacity-90 transition-opacity">
+						<a href={event.ticketingUrl} target="_blank" rel="noreferrer">
+							Get Your Ticket
+						</a>
+						</Button>
+						<Button variant="outline">
+						<a href={`mailto:${event.email.industry}`}>
+							Industry Enquiries
+						</a>
+						</Button>
+					</div>
+					</motion.div>
+				</>
+			)
+		}
       </motion.div>
     </div>
   )

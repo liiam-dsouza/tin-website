@@ -25,10 +25,10 @@ export function Footer({ theme }: FooterProps) {
             <img
               src={theme === "light" ? "/logo-dark.svg" : "/logo-light.svg"}
               alt="TIN Logo"
-              className="h-12 w-auto"
+              className="h-21 w-auto"
             />
             <p className="text-sm text-muted-foreground">
-              Tech Industry Night {event.year}. Powered by the STEM clubs of QUT.
+              Tech Industry Night { new Date().getFullYear() }.
             </p>
           </motion.div>
 
