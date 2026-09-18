@@ -22,7 +22,7 @@ function Testimonials() {
             What Our Community Says
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Real stories from attendees who made last year's event unforgettable.
+            Real stories from attendees who made our events unforgettable.
           </p>
         </motion.div>
 

@@ -28,4 +28,18 @@ export const testimonials: Testimonial[] = [
         role: "Master's of IT Student",
         year: 2025,
     },
+	{
+		id: "jett-andrews",
+		quote: "An incredible night where you're able to meet many experienced professionals, as well as likeminded students. Plenty of opportunities were available, would highly recommend attending!",
+		name: "Jett Andrews",
+		role: "Software Engineering Student",
+		year: 2026,
+	},
+	{
+		id: "lucas-godoy",
+		quote: "Tech industry night was really informative even as a student outside of the typical tech major. The panelists gave a wide variety of perspective on the industry as whole. Definitely recommend!",
+		name: "Lucas Godoy",
+		role: "Mechanical Engineering Student",
+		year: 2026,
+	}
 ] as const
